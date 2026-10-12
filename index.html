@@ -1,217 +1,359 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Praise Jah Graphics</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praise Graphics & Arts Gallery</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    header {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 25px;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
 
-    .products {
-      padding: 20px;
-      display: grid;
-      gap: 15px;
-    }
+        header {
+            background: linear-gradient(135deg, #080808, #b00020, #ff1744);
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
 
-    .product {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px #ccc;
-    }
+        header h1 {
+            font-size: 32px;
+            letter-spacing: 2px;
+        }
 
-    .product h2 {
-      margin-top: 0;
-    }
+        header p {
+            font-size: 15px;
+            font-weight: bold;
+        }
 
-    .price {
-      font-weight: bold;
-      color: #e00000;
-      font-size: 20px;
-    }
+        nav {
+            margin-top: 20px;
+        }
 
-    button {
-      background: #111;
-      color: white;
-      border: none;
-      padding: 12px 18px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
 
-    #cart {
-      background: white;
-      margin: 20px;
-      padding: 20px;
-      border-radius: 12px;
-    }
+        nav a:hover {
+            color: #ffd700;
+        }
 
-    #whatsapp {
-      background: #25D366;
-      width: 100%;
-      font-size: 17px;
-    }
-  </style>
+        .hero {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #111, #650018, #e0002a);
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            max-width: 750px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .shop-btn,
+        .whatsapp {
+            display: inline-block;
+            background: #ffd000;
+            color: #111;
+            padding: 15px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 6px 20px #0005;
+        }
+
+        .shop-btn:hover,
+        .whatsapp:hover {
+            transform: scale(1.05);
+        }
+
+        #shop {
+            padding: 50px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .products {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            padding: 20px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 5px 20px #0002;
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-8px);
+        }
+
+        .product-img {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #eee, #ffdce3);
+            border-radius: 15px;
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+        .product h3 {
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .product p {
+            color: #666;
+            min-height: 40px;
+        }
+
+        .product strong {
+            display: block;
+            color: #e0002a;
+            font-size: 23px;
+            margin: 15px;
+        }
+
+        .product button {
+            border: none;
+            background: #e0002a;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .product button:hover {
+            background: #111;
+        }
+
+        .services {
+            padding: 50px 20px;
+            background: #111;
+            color: white;
+        }
+
+        .service-box {
+            max-width: 900px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .service-box div {
+            padding: 25px 10px;
+            text-align: center;
+            background: #b00020;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+
+        .contact {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #fff, #ffe1e7);
+        }
+
+        .contact h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .contact p {
+            margin-bottom: 25px;
+        }
+
+        .whatsapp {
+            background: #18a558;
+            color: white;
+        }
+
+        footer {
+            background: #080808;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        @media (max-width: 800px) {
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .service-box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .service-box {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-  <h1>Praise Jah Graphics</h1>
-  <p>We Design • We Print • We Brand</p>
+    <h1>PRAISE GRAPHICS</h1>
+    <p>& ARTS GALLERY</p>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#shop">E-Shop</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
-<section class="products">
+<section id="home" class="hero">
+    <div>
+        <h2>Welcome to Praise Graphics & Arts Gallery</h2>
+        <p>We Design • We Print • We Brand</p>
 
-  <div class="product">
-    <h2>Graphics Design</h2>
-    <p class="price">₦3,000</p>
-    <button onclick="addToCart('Graphics Design', 3000)">
-      Add to Cart
-    </button>
-  </div>
-
-  <div class="product">
-    <h2>Logo Design</h2>
-    <p class="price">₦2,000</p>
-    <button onclick="addToCart('Logo Design', 2000)">
-      Add to Cart
-    </button>
-  </div>
-
-  <div class="product">
-    <h2>Poster</h2>
-    <p class="price">₦800 each</p>
-    <button onclick="addToCart('Poster', 800)">
-      Add to Cart
-    </button>
-  </div>
-
-  <div class="product">
-    <h2>T-Shirt</h2>
-    <p class="price">₦6,000 each</p>
-    <button onclick="addToCart('T-Shirt', 6000)">
-      Add to Cart
-    </button>
-  </div>
-
-  <div class="product">
-    <h2>Sticker</h2>
-    <p class="price">50 pieces — ₦10,000</p>
-    <button onclick="addToCart('Sticker (50 pieces)', 10000)">
-      Add to Cart
-    </button>
-  </div>
-
+        <a href="#shop" class="shop-btn">
+            GO TO E-SHOP 🛍️
+        </a>
+    </div>
 </section>
 
-<section id="cart">
-  <h2>🛒 Your Cart</h2>
+<section id="shop">
+    <h2 class="section-title">🛍️ Our E-Shop</h2>
 
-  <div id="cartItems">
-    Your cart is empty.
-  </div>
+    <div class="products">
 
-  <h3>Total: ₦<span id="total">0</span></h3>
+        <div class="product">
+            <div class="product-img">🛍️</div>
+            <h3>Paper Bag</h3>
+            <p>Professional branded paper bag</p>
+            <strong>₦1,600</strong>
 
-  <button id="whatsapp" onclick="orderWhatsApp()">
-    Order on WhatsApp
-  </button>
+            <a href="https://wa.me/2349066506279?text=Hello%20Praise%20Graphics,%20I%20want%20to%20order%20a%20Paper%20Bag."
+               target="_blank">
+                <button>Order Now</button>
+            </a>
+        </div>
+
+        <div class="product">
+            <div class="product-img">👕</div>
+            <h3>Custom T-Shirt</h3>
+            <p>Beautiful custom T-shirt branding</p>
+            <strong>₦7,000</strong>
+
+            <a href="https://wa.me/2349066506279?text=Hello%20Praise%20Graphics,%20I%20want%20to%20order%20a%20Custom%20T-Shirt."
+               target="_blank">
+                <button>Order Now</button>
+            </a>
+        </div>
+
+        <div class="product">
+            <div class="product-img">🛍️</div>
+            <h3>Nylon Bag</h3>
+            <p>Custom branded nylon bag</p>
+            <strong>₦500</strong>
+
+            <a href="https://wa.me/2349066506279?text=Hello%20Praise%20Graphics,%20I%20want%20to%20order%20a%20Nylon%20Bag."
+               target="_blank">
+                <button>Order Now</button>
+            </a>
+        </div>
+
+        <div class="product">
+            <div class="product-img">💳</div>
+            <h3>Business Cards</h3>
+            <p>50 professionally printed cards</p>
+            <strong>₦8,000</strong>
+
+            <a href="https://wa.me/2349066506279?text=Hello%20Praise%20Graphics,%20I%20want%20to%20order%20Business%20Cards."
+               target="_blank">
+                <button>Order Now</button>
+            </a>
+        </div>
+
+    </div>
 </section>
 
-<script>
+<section id="services" class="services">
+    <h2 class="section-title">🎨 Our Services</h2>
 
-let cart = [];
-let total = 0;
+    <div class="service-box">
+        <div>🎨<br>Graphics Design</div>
+        <div>🖨️<br>Printing</div>
+        <div>👕<br>Branding</div>
+        <div>📸<br>Photo & Video Editing</div>
+    </div>
+</section>
 
-function addToCart(name, price) {
+<section id="contact" class="contact">
+    <h2>Ready to Order?</h2>
 
-  cart.push({
-    name: name,
-    price: price
-  });
+    <p>Contact Praise Graphics & Arts Gallery today.</p>
 
-  total += price;
+    <a href="https://wa.me/2349066506279"
+       target="_blank"
+       class="whatsapp">
+        💬 ORDER ON WHATSAPP
+    </a>
+</section>
 
-  showCart();
-}
-
-function showCart() {
-
-  let cartItems = document.getElementById("cartItems");
-
-  cartItems.innerHTML = "";
-
-  cart.forEach(function(item, index) {
-
-    cartItems.innerHTML +=
-      "<p>" +
-      item.name +
-      " — ₦" +
-      item.price.toLocaleString() +
-      " <button onclick='removeItem(" +
-      index +
-      ")'>Remove</button></p>";
-
-  });
-
-  document.getElementById("total").innerText =
-    total.toLocaleString();
-}
-
-function removeItem(index) {
-
-  total -= cart[index].price;
-
-  cart.splice(index, 1);
-
-  showCart();
-}
-
-function orderWhatsApp() {
-
-  if (cart.length === 0) {
-    alert("Your cart is empty.");
-    return;
-  }
-
-  let message = "Hello Praise Jah Graphics!%0A%0A";
-  message += "I want to order:%0A";
-
-  cart.forEach(function(item) {
-
-    message +=
-      "- " +
-      item.name +
-      " — ₦" +
-      item.price.toLocaleString() +
-      "%0A";
-
-  });
-
-  message +=
-    "%0ATotal: ₦" +
-    total.toLocaleString();
-
-  let phone = "2349066506279";
-
-  window.open(
-    "https://wa.me/" + phone + "?text=" + message,
-    "_blank"
-  );
-}
-
-</script>
+<footer>
+    <p>© 2026 Praise Graphics & Arts Gallery</p>
+    <p>We Design • We Print • We Brand</p>
+</footer>
 
 </body>
 </html>
